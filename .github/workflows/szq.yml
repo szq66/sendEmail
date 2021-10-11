@@ -2,7 +2,7 @@ name: ccy-helper
 
 on:
   schedule:
-    - cron: "0 0 16 * * ?" # 该时间为UTC时间，比北京时间晚8个小时，每天早上7点自动执行
+    - cron: "0 4 * * *" # 该时间为UTC时间，比北京时间晚8个小时，每天早上7点自动执行
 
 jobs:
   send:
@@ -10,5 +10,5 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
-      - name: Run Project
+      - name: 'Send Email'
         run: npm install && npm run server
