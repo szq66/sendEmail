@@ -37,14 +37,17 @@ async function init() {
     const lifeData = await lifeRes.json();
 
     // 获取one一个文案及图片
+    // const oneRes = await fetch(
+    //   `http://api.tianapi.com/txapi/one/index?key=${tianXingKey}`
+    // );
     const oneRes = await fetch(
-      `http://api.tianapi.com/txapi/one/index?key=${tianXingKey}`
+      `https://apier.youngam.cn/essay/one`
     );
 
     const oneData = await oneRes.json();
-    const { word } = oneData.newslist[0];
     // const { word, imgurl } = oneData.newslist[0];
-    const imgurl = 'https://api.mfstudio.cc/bing/';
+    const { text: word } = oneData.dataList[0];
+    const imgurl = 'https://api.kdcc.cn/img/?day=' + Date.parse(new Date());
 
     // 计算日期
     const lovingDays = dayjs(dayjs().tz('Asia/Shanghai')).diff(
