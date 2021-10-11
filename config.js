@@ -2,9 +2,9 @@
 module.exports = {
   fromDisplayText: '阿离小可爱', // 收件箱展示的来件人名字
   fromDisplaySubText: '每日提醒', // 收件箱展示的次级标题
-  user: ${{ secrets.USER }}, // 发送者邮箱
-  pass: ${{ secrets.PASS }}, // 发送者邮箱MTP协议密码
-  to: ${{ secrets.USER }}, // 发送到谁，填邮箱
+  user: `${{ secrets.USER }}`, // 发送者邮箱
+  pass: `${{ secrets.PASS }}`, // 发送者邮箱MTP协议密码
+  to: `${{ secrets.USER }}`, // 发送到谁，填邮箱
   weatherKey: '33369e365fe84eb68876f52a2ae51cca', // 和风天气key
   location: '101280704',  // 和风天气-珠海香洲区的id
   type: '1,3,9', // 和风天气-生活指数type
