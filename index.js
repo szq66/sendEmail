@@ -47,7 +47,7 @@ async function init() {
     const oneData = await oneRes.json();
     // const { word, imgurl } = oneData.newslist[0];
     const { text: word } = oneData.dataList[0];
-    const imgurl = 'https://api.kdcc.cn/img/?day=' + Date.parse(new Date());
+    const imgurl = 'https://api.kdcc.cn/img/?day=' + Date.now();
 
     // 计算日期
     const lovingDays = dayjs(dayjs().tz('Asia/Shanghai')).diff(
