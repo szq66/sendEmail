@@ -2,7 +2,7 @@ name: szq-helper
 
 on:
   schedule:
-    - cron: "18 8 * * *" # 该时间为UTC时间，比北京时间晚8个小时，每天早上7点半自动执行
+    - cron: "29 8 * * *" # 该时间为UTC时间，比北京时间晚8个小时，每天早上7点半自动执行
 
 jobs:
   send:
