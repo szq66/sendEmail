@@ -2,7 +2,7 @@ name: szq-helper
 
 on:
   schedule:
-    - cron: "29 23 * * *" # 该时间为UTC时间，比北京时间晚8个小时，每天早上7点半自动执行
+    - cron: "53 7 * * *" # 该时间为UTC时间，比北京时间晚8个小时，每天早上7点半自动执行
 
 jobs:
   send:
@@ -11,4 +11,4 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
       - name: Run Project
-        run: npm install && npm run server
+        run: npm install && node index.js ${{secrets.USER}} ${{secrets.PASS}}

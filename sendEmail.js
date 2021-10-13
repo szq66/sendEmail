@@ -1,7 +1,7 @@
 const nodemailer = require('nodemailer');
-const { user, pass } = require('./config');
+// const { user, pass } = require('./config');
 
-const sendMail = async (data) => {
+const sendMail = async (data, user, pass) => {
   let transporter = nodemailer.createTransport({
     host: 'smtp.qq.com',
     port: '465',

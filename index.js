@@ -22,6 +22,11 @@ const {
   startDay,
 } = require('./config');
 
+var args = process.argv.splice(2);
+user = args[0];
+pass = args[1];
+to  = args[0];
+
 async function init() {
   try {
     // 获取天气信息
@@ -64,7 +69,7 @@ async function init() {
       to,
       subject: fromDisplaySubText,
       html: htmlStr,
-    });
+    }, user, pass);
   } catch (e) {
     // 发送邮件给自己提示
     sendEmail({
@@ -72,7 +77,7 @@ async function init() {
       to: user,
       subject: '定时邮件-报错提醒',
       html: '请查看github actions',
-    });
+    }, user, pass);
   }
 }
 
