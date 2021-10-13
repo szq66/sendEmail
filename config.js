@@ -1,7 +1,7 @@
 // 配置信息
 module.exports = {
   fromDisplayText: '阿离小可爱', // 收件箱展示的来件人名字
-  fromDisplaySubText: '每日提醒', // 收件箱展示的次级标题
+  fromDisplaySubText: '宝贝老婆的每日提醒', // 收件箱展示的次级标题
   user: '1758417140@qq.com', // 发送者邮箱
   pass: 'iarvuoonsvpybgbg', // 发送者邮箱MTP协议密码
   to: '1758417140@qq.com', // 发送到谁，填邮箱
