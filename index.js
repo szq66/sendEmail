@@ -52,7 +52,7 @@ async function init() {
     const oneData = await oneRes.json();
     // const { word, imgurl } = oneData.newslist[0];
     const { text: word } = oneData.dataList[0];
-    const imgurl = 'https://api.kdcc.cn/img/bingimg/' + new Date().format('yyyy/MM/dd') + '.jpg';
+    const imgurl = 'https://api.kdcc.cn/img/bingimg/' + dayjs(dayjs().tz('Asia/Shanghai')).format('YYYY/MM/DD') + '.jpg';
 
     // 计算日期
     const lovingDays = dayjs(dayjs().tz('Asia/Shanghai')).diff(
@@ -82,24 +82,3 @@ async function init() {
 }
 
 init();
-
-Date.prototype.format = function(fmt) { 
-  var o = { 
-    "M+" : this.getMonth()+1,                 //月份 
-    "d+" : this.getDate(),                    //日 
-    "h+" : this.getHours(),                   //小时 
-    "m+" : this.getMinutes(),                 //分 
-    "s+" : this.getSeconds(),                 //秒 
-    "q+" : Math.floor((this.getMonth()+3)/3), //季度 
-    "S"  : this.getMilliseconds()             //毫秒 
-  }; 
-  if(/(y+)/.test(fmt)) {
-    fmt=fmt.replace(RegExp.$1, (this.getFullYear()+"").substr(4 - RegExp.$1.length)); 
-  }
-  for(var k in o) {
-    if(new RegExp("("+ k +")").test(fmt)){
-      fmt = fmt.replace(RegExp.$1, (RegExp.$1.length==1) ? (o[k]) : (("00"+ o[k]).substr((""+ o[k]).length)));
-    }
-  }
-  return fmt; 
-}        
